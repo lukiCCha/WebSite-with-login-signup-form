@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;700&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.header{
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  padding: 0px 20px;
+}
+
+.nav{ 
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav,
+.nav_item{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav_item{
+  column-gap: 35px;
+}
+
+.nav_logo,
+.button,
+.nav_link{
+  color: #fff;
+}
+
+.nav_logo{
+  font-size: 35px;  
+}
+
+.nav_link:hover{
+  color: #d9d9d9;
+}
+
+.button{
+  padding: 6px 24px;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:active{
+  transform: scale(0.98);
+}
+
+/*Home*/
+
+.home{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("anime-girl-cyberpunk-ride-4k-lx-3840x2160.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.home::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+
+.home.show::before{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form_container{
+  position: absolute;
+  max-width: 320px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+
+.home.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.signup_form{
+  display: none;
+}
+
+.form_container.active .signup_form{
+  display: block;
+}
+
+.form_container.active .login-form{
+  display: none;
+}
+
+.form_close{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  color: #0b0217;
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.form_container h2{
+  font-size: 22px;
+  color: #0b0217;
+  text-align: center;
+}
+
+.input_box{
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+
+.input_box input{
+  height: 100%;
+  width: 100%;
+  padding: 0 30px;
+  border: none;
+  outline: none;
+  border-bottom: 1.5px solid #aaaaaa;
+  transition: all 0.5s ease;
+  color: #333;
+}
+
+.input_box input:focus{
+  border-color: #ff5ce9;
+}
+
+.input_box input:focus ~ i.password,
+.input_box input:focus ~ i.email{
+  color: #ff5ce9;
+}
+
+.input_box i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.input_box i.password,
+.input_box i.email{
+  left: 0;
+  color: #707070;
+}
+
+.input_box i.pw_hide{
+  right: 0px;
+  font-size: 18px;
+}
+
+.option_field{
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form_container a{
+  color: #ff5ce9;
+  font-size: 12px;
+  transition: 0.5s;
+}
+
+.form_container a:hover{
+  text-decoration: underline;
+}
+
+.checkbox{
+  column-gap: 8px;
+  display: flex;
+  white-space: nowrap;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.checkbox input{
+  accent-color: #ff5ce9;
+}
+
+.checkbox label{
+  color: #0b0217;
+  user-select: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.form_container .button{
+  background: #ff5ce9;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0px;
+  border-radius: 10px;
+}
+
+.login_signup{
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
